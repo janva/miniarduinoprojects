@@ -74,15 +74,17 @@ void writeTemperatureLevel(float temperature)
     }
 }
 
+void setup()
+{
+    initDigitalOutputs();
+    //Use serial port to communicate data from analog port to
+    // screen using monitor in IDE.
+    initSerialPort();
+}
+
 void loop()
 {
     // Serial.println(temperature);
     writeTemperatureLevel(readHeatSensorAsCelsius());
     delay(1);
-}
-
-void setup()
-{
-    initDigitalOutputs();
-    initSerialPort();
 }
