@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/janva/programering/arduino/arduino_soft/tools/**",
+                "/home/janva/Arduino/libraries/**",
+                "/home/janva/programering/arduino/arduino_soft/libraries/**",
+                "/home/janva/programering/arduino/arduino_soft/hardware/tools/**",
+                "/home/janva/programering/arduino/arduino_soft/hardware/arduino/avr/**"
+            ],
+            "forcedInclude": [
+                "/home/janva/programering/arduino/arduino_soft/hardware/arduino/avr/cores/arduino/Arduino.h"
+            ],
+            "defines": [
+                "USBCON"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}
