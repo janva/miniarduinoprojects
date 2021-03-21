@@ -1,7 +1,8 @@
 #  Color mixing lamp project
 
 This is the color  mixing project from project book. 
-The basic idée here is to connect three phototransistor to arduino analog inputs, read values and map those values in some way to digital output which is connected to an RGB LED. The RGB LED is suppose to change color depending on how much red, green, and blue light is hitting the photo-transistors.
+The basic idée here is to use three phototransistor to measure amount of read, green and blue ambient light. We will feed this values to Arduinos analog inputs.
+Values will some way to digital outputs which are connected to an RGB LED. The end goal is to make RGB LED shift color depending on how much red, green, and blue light is hitting the photo-transistors.
 
 ## Equipment
 
@@ -43,5 +44,5 @@ The code is pretty straight forward. The interesting part is really how to achie
  Achieving PWM is all taken care of by the function analogWrite. The second argument is a value between 0 and 255 representing the duty cycle that is the fraction of time output will spend in on state for each pulse. 0 meaning always off and 255 always on. We do as mentioned before make sure we chose output supporting PWM. Such output are prefixed with ~ on the board.
 
 ### Mapping input to output
-Analog inputs goes through A/D converter which will map input to integer values between 0-1023. We simply divide input by 4 for to scale input to values between 0 and 255. Integer division behaves the same way it would in the C language 
+Analog inputs goes through A/D converter which will map input to integer values between 0-1023. We simply divide input by 4 to scale input to values between 0 and 255. Integer division behaves the same way it would in the C language 
 that is remainders are truncated and division renders an integer value.
