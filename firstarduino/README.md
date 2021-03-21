@@ -18,7 +18,7 @@ Following hardware and software was used for this project.
   
 
 ## Getting up and running.
-Following setup was doing in an Ubuntu environment currently is what I'm using for an OS. 
+Following setup was done in an Ubuntu environment which currently is what I'm using for an OS. 
 
 ### Getting the software
 The necessary software to interact with your arduino can be downloaded from [Arduino software pages](https://www.arduino.cc/en/software).
@@ -27,7 +27,7 @@ You could potentially install software using debian apt (advanced package tool) 
 ./install.sh
 ```
 ### I prefer to use VScode 
-The software comes packaged with and IDE but i'm really into VSCode at the moment. I like to do as much of my coding from within the VSCode editor. It turns out VSCode has an extension for working with Arduinos. It's made by Microsoft team and you easily find it using your extensions manager from with VSCode. Just search for Arduino. It should be among the first if not the first item in the list of extensions. 
+The software comes packaged with and IDE but i'm really into VSCode at the moment. I like to do as much of my coding from within the VSCode editor. It turns out VSCode has an extension for working with Arduinos. The extension was made by Microsoft team and you easily find it using your extensions manager from within VSCode. Just search for Arduino. It should be among the first if not the first item in the list of extensions. 
 
 ### Connecting the board and start communicating.
 I simply connected the board to my computer using the USB cable that came with the board.
