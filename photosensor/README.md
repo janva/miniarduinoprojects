@@ -45,4 +45,4 @@ The code is pretty straight forward. The interesting part is really how to achie
 
 ### Mapping input to output
 Analog inputs goes through A/D converter which will map input to integer values between 0-1023. We simply divide input by 4 to scale input to values between 0 and 255. Integer division behaves the same way it would in the C language 
-that is remainders are truncated and division renders an integer value.
+that is remainders are truncated and results renders integer values.
