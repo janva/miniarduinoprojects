@@ -42,6 +42,10 @@ Next we need to select port to which your device is connected after clicking sel
 ![choosing port ](./img/port.png)
 
 I needed to do one more thing in order to get everything working and is mentioned on official pages as well but i'll come back to that.
+I recent version the of the extension used the port selection is not working for me. I got it working by manually reaching into the `arduino.json` inside the .vscode folder within your project, adding the following line  
+```json
+  "port": "/dev/ttyACM0",
+```
 
 ## Circuitry
 Following simple circuit was (taken from arduino project book) was used for this simple project. 
