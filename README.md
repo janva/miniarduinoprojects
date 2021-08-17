@@ -8,3 +8,5 @@ Just for convenience I'm going to add link to the different projects here.
 - [Getting up and running](firstarduino/)
 - [Heat sensor](temperature/)
 - [Photo sensors](photosensor/)
+- [A first Servo](servo/)
+- [Light instrument ](lighttheremin/)
