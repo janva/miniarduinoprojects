@@ -15,50 +15,113 @@ void setup()
     pinMode(switchPin, INPUT);
 }
 
+void setLed(int ledPin, uint8_t state)
+{
+    digitalWrite(ledPin, state);
+}
+
+void setAllLeds()
+{
+    for (int ledPin = 2; ledPin < 8; ++ledPin)
+    {
+        setLed(ledPin, blinkState);
+    }
+}
+void turnOnLed(int ledPin)
+{
+    setLed(ledPin, HIGH);
+}
+
+void turnOffLed(int ledPin)
+{
+    setLed(ledPin, LOW);
+}
+
+void turnOffAll()
+{
+    for (int ledPin = 2; ledPin < 8; ++ledPin)
+    {
+        turnOffLed(ledPin);
+    }
+}
+void turnOnAll()
+{
+    for (int ledPin = 2; ledPin < 8; ++ledPin)
+    {
+        turnOnLed(ledPin);
+    }
+}
+
+void invertBlinkState()
+{
+    blinkState = !blinkState;
+}
+
+void blinkAllLeds()
+{
+    setPreviousTime();
+    invertBlinkState();
+    setAllLeds();
+}
+
+bool millisHasPassedSincePreviousStoredTime(long int ms)
+{
+    return millis() - previousTime > ms;
+}
+
 bool timeIsUp()
 {
     return led > 7;
 }
-
-void signalTimeIsUp()
-{
-    long currentTime = millis();
-    if (currentTime - previousTime > 1000)
-    {
-        previousTime = currentTime;
-        blinkState = !blinkState;
-        for (int x = 2; x < 8; ++x)
-        {
-
-            digitalWrite(x, blinkState);
-        }
-    }
-}
-
+// states hmm make state machine maybe instead
 bool switchHasTriggered()
 {
     return digitalRead(switchPin) != previousSwitchState;
 }
 
+void resetLedIterator()
+{
+    led = 2;
+}
+
+void setPreviousSwitchState()
+{
+    previousSwitchState = digitalRead(switchPin);
+}
+
+void setPreviousTime()
+{
+    previousTime = millis();
+}
+
+void updateHourglass()
+{
+    if (millisHasPassedSincePreviousStoredTime(intervall))
+    {
+        turnOnLed(led);
+        ++led;
+        setPreviousTime();
+    }
+}
+
+void signalTimeIsUp()
+{
+    if (millisHasPassedSincePreviousStoredTime(1000))
+    {
+        blinkAllLeds();
+    }
+}
+
 void restartHourGlass()
 {
-    for (int x = 2; x < 8; ++x)
-    {
-        digitalWrite(x, LOW);
-    }
-    led = 2;
-    previousSwitchState = digitalRead(switchPin);
+    turnOffAll();
+    resetLedIterator();
+    setPreviousSwitchState();
 }
 
 void loop()
 {
-    long currentTime = millis();
-    if (currentTime - previousTime > intervall)
-    {
-        digitalWrite(led, HIGH);
-        ++led;
-        previousTime = currentTime;
-    }
+    updateHourglass();
 
     if (timeIsUp())
     {
