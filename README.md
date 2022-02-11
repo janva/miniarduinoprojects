@@ -10,3 +10,4 @@ Just for convenience I'm going to add link to the different projects here.
 - [Photo sensors](photosensor/)
 - [A first Servo](servo/)
 - [Light instrument ](lighttheremin/)
+- [Hour glass](hourglass)
