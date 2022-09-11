@@ -8,7 +8,6 @@ void setup (){
 }
 
 void loop(){
-
     switch_state = digitalRead(switch_pin);
     if (switch_state == HIGH){
         digitalWrite(motor_pin, HIGH);
