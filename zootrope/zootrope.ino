@@ -4,6 +4,7 @@ const int enablePin = 9;
 const int directionSwitchPin = 4;
 const int onOffSwitchStatePin = 5;
 const int potPin = A0;
+
 int onOffSwitchState = 0;
 int previousOnOffSwitchState = 0;
 int directionSwitchState = 0;
