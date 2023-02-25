@@ -13,6 +13,10 @@ In this project we want to control spin-direction and speed DC-motor. We will co
 
 # Circuitry
 
-![circuitry](hbridge_1.svg).
+![circuitry](hbridge_1.svg)
 
 # About the H-bridge
+
+![hbridge principle](hbridge_principle_1.svg).
+
+![hbridge principle transis](hbridge-principle.svg).
